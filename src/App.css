@@ -1,17 +1,64 @@
+/* BASIC */
 body {
   margin: 0;
   padding: 0;
   font-family: courier;
-  background: #fed700;
+  background: #fed80091;
   user-select: none;
 }
 h1 {
   margin: 0;
   padding: 10px;
 }
+.input {
+  margin: 40px;
+}
 .bold {
   font-weight: bolds;
 }
+/* SETTINGS */
+.settings {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 10px;
+  right: 10px;
+  background-color: magenta;
+  border: 5px solid black;
+  border-radius: 50px;
+  height: 50px;
+  width: 50px;
+}
+.settings-panel {
+  position: fixed;
+  display: none;
+  justify-content: space-around;
+  align-items: start;
+  flex-direction: column;
+  top: 10px;
+  right: 10px;
+  background-color: magenta;
+  border: 5px solid black;
+  border-radius: 30px;
+  padding: 10px;
+  font-size: 15px;
+  z-index: 1;
+  animation: fadeInScaleUp 0.2s ease-out forwards;
+  /* width: 95vw;
+  box-sizing: border-box; */
+  /* height: 50vh; 
+  max-width: 300px;
+  max-height: 300px; */
+}
+.settings-panel-item {
+  margin: 5px;
+}
+.settings:hover + .settings-panel,
+.settings-panel:hover {
+  display: flex;
+}
+/* CARDS */
 .app {
   height: 100vh;
   display: flex;
@@ -54,8 +101,7 @@ h1 {
   background-color: transparent;
   width: 250px;
   height: 200px;
-  /* border: 1px solid #f1f1f1; */
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  perspective: 1000px;
   border-radius: 20px;
   transition: opacity 0.3s ease-in-out;
 }
@@ -74,6 +120,7 @@ h1 {
 
 .flip-card-front,
 .flip-card-back {
+  box-sizing: border-box;
   border: black 5px solid;
   border-radius: 20px;
   position: absolute;
@@ -96,9 +143,23 @@ h1 {
   color: black;
   transform: rotateY(180deg);
 }
-
+/* RESPONSIVE */
 @media only screen and (max-width: 600px) {
   .cards {
     flex-direction: column;
+  }
+  .app {
+    height: 90vh;
+  }
+}
+
+@keyframes fadeInScaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.5) translate(40%, -40%);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translate(0, 0);
   }
 }
