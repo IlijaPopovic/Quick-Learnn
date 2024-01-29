@@ -6,6 +6,8 @@ import {
   getRandomSymbolCardData,
   getRandomWordCardData,
 } from "./utils";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGear } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
   const [dataFunctions, setDataFunctions] = useState({
@@ -70,7 +72,9 @@ function App() {
 
   return (
     <div className="app">
-      <div className="settings">S</div>
+      <div className="settings">
+        <FontAwesomeIcon icon={faGear} />
+      </div>
       <div className="settings-panel">{settingsPanel}</div>
       <div className="cards">
         {/* <div className="minus" onClick={handleClick}>
