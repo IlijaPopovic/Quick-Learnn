@@ -13,6 +13,9 @@ h1 {
 .input {
   margin: 40px;
 }
+input[type="checkbox"] {
+  margin-right: 5px;
+}
 .bold {
   font-weight: bolds;
 }
@@ -43,7 +46,7 @@ h1 {
   border: 5px solid black;
   border-radius: 30px;
   padding: 10px;
-  font-size: 15px;
+  font-size: 25px;
   z-index: 1;
   animation: fadeInScaleUp 0.2s ease-out forwards;
   /* width: 95vw;
@@ -54,6 +57,8 @@ h1 {
 }
 .settings-panel-item {
   margin: 5px;
+  display: flex;
+  flex-direction: row;
 }
 .settings:hover + .settings-panel,
 .settings-panel:hover {

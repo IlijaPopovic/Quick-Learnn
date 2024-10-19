@@ -66,7 +66,7 @@ function App() {
         checked={checkboxStates[key]}
         onChange={handleCheckboxChange}
       />
-      <label htmlFor={key}>{key}</label>
+      <label htmlFor={key}> {key.toUpperCase()}</label>
     </div>
   ));
 
